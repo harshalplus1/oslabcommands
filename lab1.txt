@@ -1,0 +1,94 @@
+student1@MIT-ICT-LAB5-32:~/210911366$ ls >filelist.txt
+student1@MIT-ICT-LAB5-32:~/210911366$ cat filelist.txt
+abc.txt
+file1.txt
+file2.txt
+filelist1.txt
+filelist.txt
+test
+student1@MIT-ICT-LAB5-32:~/210911366$ ls >>file1.txt
+student1@MIT-ICT-LAB5-32:~/210911366$ cat file1.txt
+hello world
+abc.txt
+file1.txt
+file2.txt
+filelist1.txt
+filelist.txt
+test
+student1@MIT-ICT-LAB5-32:~/210911366$ wc file1.txt
+ 7  8 72 file1.txt
+student1@MIT-ICT-LAB5-32:~/210911366$ cat file1.txt
+hello world
+abc.txt
+file1.txt
+file2.txt
+filelist1.txt
+filelist.txt
+test
+student1@MIT-ICT-LAB5-32:~/210911366$ ls|wc
+      6       6      60
+student1@MIT-ICT-LAB5-32:~/210911366$ ls
+abc.txt  file1.txt  file2.txt  filelist1.txt  filelist.txt  test
+student1@MIT-ICT-LAB5-32:~/210911366$ rm abc.txt
+student1@MIT-ICT-LAB5-32:~/210911366$ ls
+file1.txt  file2.txt  filelist1.txt  filelist.txt  test
+student1@MIT-ICT-LAB5-32:~/210911366$ rmdir test
+rmdir: failed to remove 'test': Directory not empty
+student1@MIT-ICT-LAB5-32:~/210911366$ rmdir -rf
+rmdir: invalid option -- 'r'
+Try 'rmdir --help' for more information.
+student1@MIT-ICT-LAB5-32:~/210911366$ rmdir -rf test
+rmdir: invalid option -- 'r'
+Try 'rmdir --help' for more information.
+student1@MIT-ICT-LAB5-32:~/210911366$ rmdit -r test
+
+Command 'rmdit' not found, did you mean:
+
+  command 'rmdir' from deb coreutils (8.30-3ubuntu2)
+  command 'rmdic' from deb canna-utils (3.7p3-14)
+
+Try: apt install <deb name>
+
+student1@MIT-ICT-LAB5-32:~/210911366$ rmdir -r test
+rmdir: invalid option -- 'r'
+Try 'rmdir --help' for more information.
+student1@MIT-ICT-LAB5-32:~/210911366$ rm -rf test
+student1@MIT-ICT-LAB5-32:~/210911366$ ls
+file1.txt  file2.txt  filelist1.txt  filelist.txt
+student1@MIT-ICT-LAB5-32:~/210911366$ touch abc.txt bcc.txt
+student1@MIT-ICT-LAB5-32:~/210911366$ ls
+abc.txt  bcc.txt  file1.txt  file2.txt  filelist1.txt  filelist.txt
+student1@MIT-ICT-LAB5-32:~/210911366$ ls *.txt
+abc.txt  bcc.txt  file1.txt  file2.txt  filelist1.txt  filelist.txt
+student1@MIT-ICT-LAB5-32:~/210911366$ touch hello
+student1@MIT-ICT-LAB5-32:~/210911366$ ls
+abc.txt  bcc.txt  file1.txt  file2.txt  filelist1.txt  filelist.txt  hello
+student1@MIT-ICT-LAB5-32:~/210911366$ ls *.txt
+abc.txt  bcc.txt  file1.txt  file2.txt  filelist1.txt  filelist.txt
+student1@MIT-ICT-LAB5-32:~/210911366$ ls [1-9]
+ls: cannot access '[1-9]': No such file or directory
+student1@MIT-ICT-LAB5-32:~/210911366$ ls *[1-9]
+ls: cannot access '*[1-9]': No such file or directory
+student1@MIT-ICT-LAB5-32:~/210911366$ find . -name "*[1-9]*"
+./filelist1.txt
+./file1.txt
+./file2.txt
+student1@MIT-ICT-LAB5-32:~/210911366$ ls ????.txt
+ls: cannot access '????.txt': No such file or directory
+student1@MIT-ICT-LAB5-32:~/210911366$ touch abcd.txt
+student1@MIT-ICT-LAB5-32:~/210911366$ ls ????.txt
+abcd.txt
+student1@MIT-ICT-LAB5-32:~/210911366$ ls [!a+e+i+o+u].txt
+ls: cannot access '[!a+e+i+o+u].txt': No such file or directory
+student1@MIT-ICT-LAB5-32:~/210911366$ ls *{a,e,i,o,u}*
+ls: cannot access '*u*': No such file or directory
+ abcd.txt   file1.txt   file2.txt   filelist1.txt   filelist.txt   hello
+ abc.txt    file1.txt   file2.txt   filelist1.txt   filelist.txt   hello
+student1@MIT-ICT-LAB5-32:~/210911366$ ls [!aeiou]*.txt
+bcc.txt  file1.txt  file2.txt  filelist1.txt  filelist.txt
+student1@MIT-ICT-LAB5-32:~/210911366$ ^C
+student1@MIT-ICT-LAB5-32:~/210911366$ ^C
+student1@MIT-ICT-LAB5-32:~/210911366$ ^Vls *{a,e,i,o,u}*^C
+student1@MIT-ICT-LAB5-32:~/210911366$ ls ????*.txt
+abcd.txt  file1.txt  file2.txt  filelist1.txt  filelist.txt
+
